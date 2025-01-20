@@ -71,7 +71,7 @@ export default function Home() {
         setPackages("")
     }
 
-    const handleOrderChange = (event) => {
+    const handleOrderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
         // Allow empty string or numeric values only
         if (newValue === "" || !isNaN(Number(newValue))) {
