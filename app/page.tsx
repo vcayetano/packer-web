@@ -4,12 +4,12 @@ import {Grid} from "@mui/system";
 import {useEffect, useState} from "react";
 
 class Package {
-    size: number;
-    quantity: number
+    size: number = 0;
+    quantity: number = 0;
 }
 
 class DefaultPacks {
-    packs: number[]
+    packs: number[] = []
 }
 
 export default function Home() {
