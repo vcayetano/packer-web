@@ -12,6 +12,8 @@ class DefaultPacks {
     packs: number[] = []
 }
 
+const API_BASE_URL = 'https://fulfillment-app-2ndro.ondigitalocean.app'
+
 export default function Home() {
 
     const [orderCount, setOrderCount] = useState("");
@@ -23,7 +25,7 @@ export default function Home() {
     useEffect(() => {
 
         async function GetDefaultPacks(): Promise<DefaultPacks> {
-            const query = await fetch('http://localhost:8080/default-packs')
+            const query = await fetch(`${API_BASE_URL}/default-packs`)
             return await query.json()
         }
 
@@ -42,7 +44,7 @@ export default function Home() {
     function GetSmallestPack() {
         async function GetSmallestPack(): Promise<Package[]> {
             const packSizes: number[] = packages.split(",").map(Number)
-            const query = await fetch('http://localhost:8080/packs', {
+            const query = await fetch(`${API_BASE_URL}/packs`, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
