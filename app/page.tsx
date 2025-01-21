@@ -129,12 +129,12 @@ export default function Home() {
                     <h2>Results: </h2>
                     <List sx={{width: '100%', maxWidth: 360, bgcolor: 'background.paper'}}>
                         {
-                            packagesList.map((item, index) => {
+                            packagesList.filter(item => item.quantity != 0).map((item, index) => {
                                 return (
                                     <ListItem disablePadding key={index}>
                                         <ListItemButton>
                                             <ListItemText
-                                                primary={`Package size: ${item.size} will be used ${item.quantity} times`}/>
+                                                primary={`Package size: ${item.size} will be used ${item.quantity} time(s)`}/>
                                         </ListItemButton>
                                     </ListItem>
                                 )
