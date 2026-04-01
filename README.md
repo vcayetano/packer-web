@@ -17,6 +17,12 @@ When I'm working on a quick project or just whipping up a script, I go with fetc
 
 And the cool thing? You can totally wrap fetch in your own setup to make it feel like Axios while keeping your bundle nice and light!
 
+
+### WebApp Access:
+
+https://packer-web-pied.vercel.app/
+
+
 ## Running locally
 
 ```bash
@@ -43,6 +49,7 @@ The app talks to two endpoints:
 - `GET /pack-sizes` - Fetches available pack sizes
 - `POST /packs` - Calculates optimal packs for an order
 - `PUT /pack-sizes` - Updates the available pack sizes
+- `DELETE /pack-sizes` - Removes all the pack sizes
 
 ## Project structure
 
