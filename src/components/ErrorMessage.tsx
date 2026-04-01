@@ -1,0 +1,13 @@
+import styles from './ErrorMessage.module.css'
+
+interface ErrorMessageProps {
+  message: string
+}
+
+export function ErrorMessage({ message }: ErrorMessageProps) {
+  return (
+    <section className={styles.card}>
+      <p>{message}</p>
+    </section>
+  )
+}
