@@ -1,3 +1,7 @@
+![preview.png](img.png)
+
+
+
 # Pack Calculator (React + TypeScript + Vite)
 
 Bootstrapped with https://vite.dev/ (Vite), this is a simple web app to calculate optimal pack combinations for orders. Enter an order quantity, and it figures out the best mix of pack sizes to fulfill it with minimal waste.
