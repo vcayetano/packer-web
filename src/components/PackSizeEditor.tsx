@@ -6,6 +6,7 @@ interface PackSizeEditorProps {
   loading: boolean
   onAdd: (size: number) => void
   onRemove: (size: number) => void
+  onClear: () => void
 }
 
 export function PackSizeEditor({
@@ -13,6 +14,7 @@ export function PackSizeEditor({
   loading,
   onAdd,
   onRemove,
+  onClear,
 }: PackSizeEditorProps) {
   const [newPackSize, setNewPackSize] = useState('')
 
@@ -61,6 +63,11 @@ export function PackSizeEditor({
           Add
         </button>
       </form>
+      {packSizes.length > 0 && (
+        <button type="button" className={styles.clearBtn} onClick={onClear}>
+          Clear Packs
+        </button>
+      )}
     </section>
   )
 }

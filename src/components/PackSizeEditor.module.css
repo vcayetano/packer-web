@@ -103,6 +103,25 @@
   color: white;
 }
 
+.clearBtn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background: rgba(229, 57, 53, 0.1);
+  color: #e53935;
+  border: 1px solid rgba(229, 57, 53, 0.3);
+  margin-top: 12px;
+}
+
+.clearBtn:hover {
+  background: #e53935;
+  color: white;
+}
+
 @media (max-width: 480px) {
   .form {
     flex-direction: column;

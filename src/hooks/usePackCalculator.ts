@@ -12,6 +12,7 @@ interface UsePackCalculatorReturn {
   calculatePacks: (orderAmount: number) => Promise<void>
   addPackSize: (size: number) => void
   removePackSize: (size: number) => void
+  clearPackSizes: () => void
 }
 
 export function usePackCalculator(): UsePackCalculatorReturn {
@@ -114,6 +115,17 @@ export function usePackCalculator(): UsePackCalculatorReturn {
     updatePackSizesOnServer(newSizes)
   }, [packSizes, updatePackSizesOnServer])
 
+  const clearPackSizes = useCallback(async () => {
+    try {
+      await fetch(`${API_BASE}/pack-sizes`, {
+        method: 'DELETE',
+      })
+      setPackSizes([])
+    } catch (err) {
+      console.error('Failed to clear pack sizes:', err)
+    }
+  }, [])
+
   return {
     packSizes,
     loadingPackSizes,
@@ -123,5 +135,6 @@ export function usePackCalculator(): UsePackCalculatorReturn {
     calculatePacks,
     addPackSize,
     removePackSize,
+    clearPackSizes,
   }
 }

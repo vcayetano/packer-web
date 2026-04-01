@@ -17,6 +17,7 @@ function App() {
     calculatePacks,
     addPackSize,
     removePackSize,
+    clearPackSizes,
   } = usePackCalculator()
 
   return (
@@ -36,6 +37,7 @@ function App() {
           loading={loadingPackSizes}
           onAdd={addPackSize}
           onRemove={removePackSize}
+          onClear={clearPackSizes}
         />
 
         {error && <ErrorMessage message={error} />}
